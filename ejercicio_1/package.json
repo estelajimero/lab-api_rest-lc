@@ -38,6 +38,7 @@
     "@babel/preset-env": "^7.10.2",
     "@babel/preset-react": "^7.10.1",
     "@babel/preset-typescript": "^7.10.1",
+    "@emotion/css": "^11.7.1",
     "@hot-loader/react-dom": "^16.13.0",
     "@types/react": "^16.9.38",
     "@types/react-dom": "^16.9.8",
