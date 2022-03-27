@@ -24,34 +24,30 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
       validate={formValidation.validateForm}
     >
       {() => (
-        <div className={classes.root}>
+          <Form className={classes.root}>
           <Avatar
             alt={character.name}
             src={character.image}
             className={classes.avatar}
           />
-          <Form className={classes.details}>
-            <Typography variant="h6" gutterBottom component="div">
+            <TextFieldComponent name="name" label="Name"  >
               Name: {character.name}
-            </Typography>
-            <Typography variant="subtitle1" gutterBottom component="div">
+            </TextFieldComponent>
+            <TextFieldComponent name="status" label="Status"  >
               Status: {character.status}
-            </Typography>
-            <Typography variant="subtitle1" gutterBottom component="div">
+            </TextFieldComponent>
+            <TextFieldComponent name="species" label="Species"  >
               Species: {character.species}
-            </Typography>
-            <Typography variant="subtitle1" gutterBottom component="div">
+            </TextFieldComponent>
+            <TextFieldComponent name="origin" label="Origin"  >
               Origin: {character.origin}
-            </Typography>
-            <Typography variant="subtitle1" gutterBottom component="div">
-              Status: {character.status}
-            </Typography>
-            <Typography variant="subtitle2" gutterBottom component="div">
+            </TextFieldComponent>
+            <TextFieldComponent name="location" label="Location"  >
               Location: {character.location}
-            </Typography>
+            </TextFieldComponent>
             <TextFieldComponent
               name="bestSentences"
-              label="bestSentences"
+              label="Best sentences"
               multiline={true}
               rows={4}
               rowsMax={8}
@@ -62,10 +58,9 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
               size="small"
               color="primary"
             >
-              Save
+              Save sentence
             </Button>
           </Form>
-        </div>
       )}
     </Formik>
   );
