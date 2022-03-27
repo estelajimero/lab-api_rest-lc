@@ -22,7 +22,8 @@ export const mockCharacterCollection: Character[] = [
       "https://rickandmortyapi.com/api/episode/15"
     ],
     url: 	"https://rickandmortyapi.com/api/character/1",
-    created: "2017-11-04T18:48:46.250Z"
+    created: "2017-11-04T18:48:46.250Z",
+    bestSentences: '',
   },
   {
     id:	16,
@@ -44,6 +45,7 @@ export const mockCharacterCollection: Character[] = [
       "https://rickandmortyapi.com/api/episode/15"
     ],
     url: 	"https://rickandmortyapi.com/api/character/16",
-    created: 	"2017-11-04T21:12:45.235Z"
+    created: 	"2017-11-04T21:12:45.235Z",
+    bestSentences: '',
   }
 ];
