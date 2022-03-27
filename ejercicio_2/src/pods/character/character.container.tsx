@@ -5,13 +5,17 @@ import { createEmptyCharacter, Character } from './character.vm';
 import { mapCharacterFromApiToVm, mapCharacterFromVmToApi } from './character.mappers';
 import { CharacterComponent } from './character.component';
 
+interface GetParams {
+  id: string,
+}
+
 export const CharacterContainer: React.FunctionComponent = (props) => {
   const [character, setCharacter] = React.useState<Character>(createEmptyCharacter());
-  const { id } = useParams();
+  const { id } = useParams<GetParams>();
   const history = useHistory();
 
   const handleLoadCharacter = async () => {
-    const apiCharacter = await api.getCharacter(id);
+    const apiCharacter = await api.getCharacter(+id);
     setCharacter(mapCharacterFromApiToVm(apiCharacter));
   };
 
