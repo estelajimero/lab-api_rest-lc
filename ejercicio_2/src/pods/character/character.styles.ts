@@ -2,10 +2,6 @@ import { css } from 'emotion';
 
 export const root = css`
   display: flex;
-`;
-
-export const details = css`
-  display: flex;
   flex-direction: column;
   justify-content: center;
 `;
