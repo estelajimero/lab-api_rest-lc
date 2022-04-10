@@ -1,6 +1,5 @@
 import React from 'react';
 import { Formik, Form } from 'formik';
-import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar';
 import { formValidation } from './character.validations';
 import { Character } from './character.vm';
@@ -24,43 +23,23 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
       validate={formValidation.validateForm}
     >
       {() => (
-          <Form className={classes.root}>
-          <Avatar
-            alt={character.name}
-            src={character.image}
-            className={classes.avatar}
+        <Form className={classes.root}>
+          <TextFieldComponent name="name" label="Name" />
+          <TextFieldComponent name="status" label="Status" />
+          <TextFieldComponent name="species" label="Species" />
+          <TextFieldComponent name="origin" label="Origin" />
+          <TextFieldComponent name="location" label="Location" />
+          <TextFieldComponent
+            name="bestSentences"
+            label="Best sentences"
+            multiline={true}
+            minRows={3}
+            maxRows={5}
           />
-            <TextFieldComponent name="name" label="Name"  >
-              Name: {character.name}
-            </TextFieldComponent>
-            <TextFieldComponent name="status" label="Status"  >
-              Status: {character.status}
-            </TextFieldComponent>
-            <TextFieldComponent name="species" label="Species"  >
-              Species: {character.species}
-            </TextFieldComponent>
-            <TextFieldComponent name="origin" label="Origin"  >
-              Origin: {character.origin}
-            </TextFieldComponent>
-            <TextFieldComponent name="location" label="Location"  >
-              Location: {character.location}
-            </TextFieldComponent>
-            <TextFieldComponent
-              name="bestSentences"
-              label="Best sentences"
-              multiline={true}
-              rows={4}
-              rowsMax={8}
-            />
-            <Button
-              type="submit"
-              variant="contained"
-              size="small"
-              color="primary"
-            >
-              Save sentence
-            </Button>
-          </Form>
+          <Button type="submit" variant="contained" color="primary">
+            Save
+          </Button>
+        </Form>
       )}
     </Formik>
   );
