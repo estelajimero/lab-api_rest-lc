@@ -11,6 +11,7 @@ interface GetParams {
 
 export const CharacterContainer: React.FunctionComponent = (props) => {
   const [character, setCharacter] = React.useState<Character>(createEmptyCharacter());
+
   const { id } = useParams<GetParams>();
   const history = useHistory();
 
@@ -27,11 +28,11 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
 
   const handleSave = async (character: Character) => {
     const apiCharacter = mapCharacterFromVmToApi(character);
-    const success = await api.saveCharacter(apiCharacter);
+    const success = await api.saveBestSentences(apiCharacter);
     if (success) {
       history.goBack();
     } else {
-      alert('Error on save character');
+      alert('Error on save best sentences');
     }
   };
 
