@@ -7,20 +7,20 @@ import CardActions from '@material-ui/core/CardActions';
 import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar/Avatar';
 import Button from '@material-ui/core/Button';
-import DeleteIcon from '@material-ui/icons/Delete';
 import { CharacterEntityVM } from '../character-collection.vm';
 import * as classes from './character-card.styles';
 
 interface Props {
   character: CharacterEntityVM;
-  onDetail: (id: number) => void;
+  onEdit: (id: number) => void;
+  onDelete: (id: number) => void;
 }
 
 export const CharacterCard: React.FunctionComponent<Props> = (props) => {
-  const { character, onDetail } = props;
+  const { character, onEdit, onDelete } = props;
 
   return (
-    <Card>
+    <Card onClick={() => onEdit(character.id)}>
       <CardHeader
         avatar={<Avatar aria-label="Character">{character.gender}</Avatar>}
         title={character.name}
@@ -38,13 +38,6 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
           </Typography>
         </div>
       </CardContent>
-      <CardActions>
-        <Button
-          variant="outlined"
-          color="primary"
-          onClick={() => onDetail(character.id)}> Detail
-        </Button>
-      </CardActions>
     </Card>
   );
 };

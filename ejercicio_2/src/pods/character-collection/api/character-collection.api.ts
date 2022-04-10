@@ -9,3 +9,6 @@ export const getCharacterCollection = async (): Promise<CharacterEntityApi[]> =>
   return data;
 };
 
+export const deleteCharacter = async (id: number): Promise<boolean> => {
+  return true;
+}
