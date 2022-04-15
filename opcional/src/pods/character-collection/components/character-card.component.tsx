@@ -34,7 +34,7 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
             style={{ height: 0, paddingTop: '56.25%' }}
           />
           <Typography variant="subtitle1" gutterBottom>
-            {character.name} is {character.species} Species, from {character.origin} and currently living in {character.location}
+            {character.name} is {character.species} Species
           </Typography>
         </div>
       </CardContent>

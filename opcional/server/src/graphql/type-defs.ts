@@ -8,6 +8,7 @@ export const typeDefs = gql`
     species: String!
     type: String!
     gender: String!
+    image: String!
     }
 
   type Query {

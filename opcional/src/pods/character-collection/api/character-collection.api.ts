@@ -1,14 +1,31 @@
 import Axios from 'axios';
-import { CharacterEntityApi } from './character-collection.api-model';
+import { graphqlClient } from 'core/api/graphql.client';
+import { gql } from 'graphql-request';
+import { CharacterEntityApi, GetCharacterCollectionResponse } from './character-collection.api-model';
 
 const url = '/api/characters';
 
 export const getCharacterCollection = async (): Promise<CharacterEntityApi[]> => {
-  const { data } = await Axios.get<CharacterEntityApi[]>(url);
+  const query = gql`
+    query {
+      characters {
+        id
+        name
+        status
+        species
+        type
+        gender
+        image
+      }
+    }
+  `;
 
-  return data;
+  const { characters } =
+    await graphqlClient.request<GetCharacterCollectionResponse>(query);
+
+    return characters;
 };
 
 export const deleteCharacter = async (id: number): Promise<boolean> => {
   return true;
-}
+};
